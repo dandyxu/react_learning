@@ -1,4 +1,6 @@
 import React from 'react';
+import FaPencil from 'react-icons/lib/fa/pencil';
+import FaTrash from 'react-icons/lib/fa/trash';
 
 class Note extends React.Component {
     render() {
@@ -6,8 +8,8 @@ class Note extends React.Component {
             <div className="note">
                 <p>Learn React</p>
                 <span>
-                    <button>Edit</button>
-                    <button>Remove</button>
+                    <button id="edit"><FaPencil /></button>
+                    <button id="remove"><FaTrash /></button>
                 </span>
             </div>
         )
