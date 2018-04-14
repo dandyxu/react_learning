@@ -29,14 +29,19 @@ class Note extends React.Component {
         alert("removing note");
     }
 
-    save() {
-        alert(this._newText.value);
+    save(e) {
+        // alert(this._newText.value);
+        e.preventDefault();
+        this.props.onChange(this._newText.value, this.props.index);
+        this.setState({
+            editing: false
+        });
     }
 
     renderForm() {
         return (
             <div className = "note">
-                <form>
+                <form onSubmit={this.save}>
                     <textarea ref={input => this._newText = input }/>
                     <button onClick={this.save}><FaFloppyO /></button>
                 </form>
